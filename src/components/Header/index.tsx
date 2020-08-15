@@ -4,6 +4,7 @@ import { Container, Wrapper, LeftNav, RightNav } from './styles';
 import { BancoInter } from '../../assets';
 import Button from '../Button';
 import AccountDropDown from '../AccountDropDown';
+import Gradient from './Gradient';
 
 interface User {
   name: string;
@@ -24,6 +25,7 @@ const Header: React.FC = () => {
           <AccountDropDown name={user.name} />
         </RightNav>
       </Wrapper>
+      <Gradient />
     </Container>
   );
 };
