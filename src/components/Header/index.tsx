@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 
 import { Container, Wrapper, LeftNav, RightNav } from './styles';
-import { BancoInter } from '../../assets';
+import { BancoInter } from '../../assets/images';
 import Button from '../Button';
-import AccountDropDown from '../AccountDropDown';
+import AccountDropDown from './AccountDropDown';
 import Gradient from './Gradient';
 
 interface User {
