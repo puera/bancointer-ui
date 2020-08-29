@@ -10,6 +10,9 @@ export default createGlobalStyle`
   html {
     font-size: 62.5%; /* 1rem = 10px */
     height: 100%;
+    @media (min-width: 1981px) {
+      font-size: 80%;
+    };
   }
   body {
     background: ${({ theme }) => theme.colors.lightGrey};
@@ -41,6 +44,10 @@ export default createGlobalStyle`
   }
   button {
     cursor: pointer;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   ul {
     list-style: none;
