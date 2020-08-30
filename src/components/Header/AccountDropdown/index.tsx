@@ -3,15 +3,17 @@ import React from 'react';
 import { useTheme } from 'styled-components';
 
 import { Container } from './styles';
+import { User } from '../Header';
 
 const removeHashFromColor = (color: string): string => color.slice(1);
 
-interface User {
-  name: string;
-}
+type AccountDropdownProps = {
+  user: User;
+};
 
-const AccountDropDown: React.FC<User> = (user) => {
+const AccountDropdown: React.FC<AccountDropdownProps> = ({ user }) => {
   const { lightGrey, secondary } = useTheme().colors;
+
   return (
     <Container>
       <img
@@ -24,4 +26,4 @@ const AccountDropDown: React.FC<User> = (user) => {
   );
 };
 
-export default AccountDropDown;
+export default AccountDropdown;

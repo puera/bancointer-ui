@@ -3,26 +3,49 @@ import React, { memo } from 'react';
 import { Container, Wrapper, LeftNav, RightNav } from './styles';
 import { BancoInter } from '../../assets/images';
 import Button from '../Button';
-import AccountDropDown from './AccountDropDown';
+import AccountDropdown from './AccountDropdown';
+import { User } from './Header';
 import Gradient from './Gradient';
+import { DEFAULT_TRANSITION } from '../../constants';
 
-interface User {
-  name: string;
-}
+const containerAnimation = {
+  unMounted: {},
+  mounted: {
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.8,
+    },
+  },
+};
+
+const navsAnimation = {
+  unMounted: { y: -20, opacity: 0 },
+  mounted: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ...DEFAULT_TRANSITION,
+    },
+  },
+};
 
 const Header: React.FC = () => {
   const user: User = { name: 'Renann Souza' };
 
   return (
     <Container>
-      <Wrapper>
-        <LeftNav>
+      <Wrapper
+        variants={containerAnimation}
+        initial="unMounted"
+        animate="mounted"
+      >
+        <LeftNav variants={navsAnimation}>
           <BancoInter />
           Internet Banking
         </LeftNav>
-        <RightNav>
+        <RightNav variants={navsAnimation}>
           <Button variant="secondary">Simulador Renda Fixa</Button>
-          <AccountDropDown name={user.name} />
+          <AccountDropdown user={user} />
         </RightNav>
       </Wrapper>
       <Gradient />

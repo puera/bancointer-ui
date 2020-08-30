@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.header`
   display: flex;
@@ -7,29 +8,32 @@ export const Container = styled.header`
   align-items: center;
   width: 100%;
   background: ${({ theme }) => theme.colors.background};
+  position: relative;
 `;
 
-export const Wrapper = styled.div`
-  max-width: 100rem;
+export const Wrapper = styled(motion.div)`
+  max-width: 113rem;
   height: 10.4rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
 `;
 
-export const LeftNav = styled.div`
+export const LeftNav = styled(motion.div)`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   > svg {
     max-width: 11.2rem;
     height: auto;
-    margin: 0 2.4rem 1.1rem 0;
+    margin: 0 2.4rem 0.4rem -0.4rem;
   }
-  font-size: ${({ theme }) => theme.fontSizes.large};
+  font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: 700;
 `;
 
-export const RightNav = styled.div`
+export const RightNav = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
   align-items: center;

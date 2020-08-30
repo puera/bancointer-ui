@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
+import { motion } from 'framer-motion';
 
-import Button from '../../../../components/Button';
-
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   ${({ theme }) => css`
     width: 100%;
     height: 100%;
@@ -28,14 +27,12 @@ export const Container = styled.div`
 `;
 
 export const Navigation = styled.nav`
-  ${() => css`
-    display: grid;
-    grid-template-columns: repeat(6, minmax(10.4rem, 1fr));
-    column-gap: 0.8rem;
-  `}
+  display: grid;
+  grid-template-columns: repeat(6, minmax(10.4rem, 1fr));
+  column-gap: 0.8rem;
 `;
 
-export const Card = styled(Button)`
+export const Card = styled(motion.button)`
   ${({ theme }) => css`
     max-width: 12rem;
     max-height: 12rem;
